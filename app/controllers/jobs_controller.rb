@@ -13,7 +13,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    @job = current_user.jobs.build
   end
 
   # GET /jobs/1/edit
@@ -22,7 +22,7 @@ class JobsController < ApplicationController
 
   # POST /jobs or /jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = current_user.jobs.build(job_params)
 
     respond_to do |format|
       if @job.save
@@ -65,6 +65,6 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.fetch(:job, {:name,:description, :category, :expiring_date})
+      params.require(:job).permit(:name, :description, :category, :expiring_date)
     end
 end

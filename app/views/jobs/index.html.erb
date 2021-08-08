@@ -12,9 +12,11 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
+        <td><%= job.name %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Apply', new_job_application_path %> </td>
       </tr>
     <% end %>
   </tbody>

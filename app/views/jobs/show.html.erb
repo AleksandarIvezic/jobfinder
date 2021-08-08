@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<h4>Position:</h4><%= @job.name%>
+<h4>Job details:</h4><%= @job.description%>
+<h4>Category:</h4><%= @job.category%>
+<h4>Expiring date:</h4><%= @job.expiring_date%>
+<br>
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

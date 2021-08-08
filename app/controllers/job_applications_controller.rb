@@ -10,6 +10,7 @@ class JobApplicationsController < ApplicationController
   # GET /jobs/new
   def new
     @job_application = JobApplication.new
+    @qual_options = ["VSS", "VKŠ", "SSS", "NK"]
   end
 
   # GET /jobs/1/edit
@@ -61,6 +62,6 @@ class JobApplicationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_application_params
-      params.fetch(:job_application, {:name,:birth_date, :email, :phone, :address, :professional_qualifications, :resume})
+      params.require(:job_application).permit(:name,:birth_date, :email, :phone, :address, :professional_qualifications, :resume)
     end
 end
