@@ -1,3 +1,5 @@
+<h2>Application for position: <%=@job.name %> </h2>
+
 <%= form_with(model: @job_application) do |form| %>
   <% if @job_application.errors.any? %>
     <div id="error_explanation">
@@ -43,9 +45,11 @@
     <%= form.label :resume %>
     <%= form.file_field :resume %>
   </div>
-  
+  <div class="field">
+  <%= form.hidden_field :job_id, value: @job.id %>  
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Apply for job"%>
   </div>
 <% end %>
