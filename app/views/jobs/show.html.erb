@@ -5,6 +5,10 @@
 <h4>Category:</h4><%= @job.category%>
 <h4>Expiring date:</h4><%= @job.expiring_date%>
 <br>
+<div class="apply-btn">
+<%= link_to 'APPLY', new_job_application_path(id: @job.id), class:"btn" %>
+
+</div>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
