@@ -9,7 +9,8 @@ class JobApplicationsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job_application = JobApplication.new
+    @job = Job.find(params[:id])
+    @job_application = @job.job_applications.build
     @qual_options = ["VSS", "VKŠ", "SSS", "NK"]
   end
 
@@ -19,7 +20,8 @@ class JobApplicationsController < ApplicationController
 
   # POST /jobs or /jobs.json
   def create
-    @job_application = JobApplication.new(job_application_params)
+    @job = Job.find( job_application_params[:job_id])
+    @job_application = @job.job_applications.build(job_application_params)
 
     respond_to do |format|
       if @job_application.save
@@ -62,6 +64,6 @@ class JobApplicationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_application_params
-      params.require(:job_application).permit(:name,:birth_date, :email, :phone, :address, :professional_qualifications, :resume)
+      params.require(:job_application).permit(:name,:birth_date, :email, :phone, :address, :professional_qualifications, :resume, :job_id)
     end
 end
