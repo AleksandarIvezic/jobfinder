@@ -9,6 +9,7 @@ class JobsController < ApplicationController
   # GET /jobs/1 or /jobs/1.json
   def show
     @job = Job.find(params[:id])
+    @creator = User.find(@job.creator_id)
   end
 
   # GET /jobs/new
