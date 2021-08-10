@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Position:</h4><%= @job.name%>
-<h4>Job details:</h4><%= @job.description%>
-<h4>Category:</h4><%= @job.category%>
-<h4>Expiring date:</h4><%= @job.expiring_date%>
+<h3><%= @job.name%> <span>(Category: <%= @job.category%>)</span></h3>
+
+
+<h4>Job details:</h4>
+<p><%= @job.description%></p> 
+
+<div class="employer">
+  <h5>Employer:</h5><span><%= @creator.name%></span>
+</div>
+<h6>Expiring date: <span><%= @job.expiring_date%></span></h6>
 <br>
 <div class="apply-btn">
 <%= link_to 'APPLY', new_job_application_path(id: @job.id), class:"btn" %>
