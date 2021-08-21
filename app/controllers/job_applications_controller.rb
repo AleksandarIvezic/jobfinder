@@ -22,11 +22,14 @@ class JobApplicationsController < ApplicationController
   def create
     @job = Job.find( job_application_params[:job_id])
     @job_application = @job.job_applications.build(job_application_params)
+    @employer = User.find(@job.creator_id);
 
     respond_to do |format|
       if @job_application.save
-        format.html { redirect_to @job_application, notice: "Job application was successfully created." }
-        format.json { render :show, status: :created, location: @job_application }
+        ConfirmationMailer.with(job_application: @job_application, job: @job, employer: @employer).applicant.deliver_later
+        ConfirmationMailer.with(job_application: @job_application,employer: @employer).employer.deliver_later
+        format.html { redirect_to :root, notice: "Job application was successfully created." }
+        format.json { render :root, status: :created, location: @job_application }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @job_application.errors, status: :unprocessable_entity }
