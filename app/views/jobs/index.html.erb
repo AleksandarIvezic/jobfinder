@@ -8,20 +8,31 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.name %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Apply', new_job_application_path(id: job.id) %> </td>
-      </tr>
-    <% end %>
-  </tbody>
+  
+  <% if user_signed_in? %>
+    <tbody>
+      <%current_user.jobs.each do |job|  %>
+        <tr>
+          <td><%= job.name %></td>
+          <td><%= link_to 'Show', job %></td>
+          <td><%= link_to 'Edit', edit_job_path(job) %></td>
+          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>         
+      <% end %>
+    </tbody>
+    <%= link_to 'Add New Job', new_job_path %>
+  <% else %>
+    
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= job.name %></td>
+          <td><%= link_to 'Show', job %></td>
+          <td><%= link_to 'Apply', new_job_application_path(id: job.id) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
 </table>
 
-<br>
 
-<%= link_to 'New Job', new_job_path %>
