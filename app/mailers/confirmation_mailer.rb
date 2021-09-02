@@ -8,10 +8,9 @@ class ConfirmationMailer < ApplicationMailer
   def applicant
     @job_application = params[:job_application]
     @job = params[:job]
-    @employer = params[:employer];
+    @employer = params[:employer]
     attachments['resume.pdf'] = File.read(@job_application.resume.current_path)
-
-    mail to: @job_application.email, subject: 'Successful application'
+    mail from: "JobFinder@example.com", to: @job_application.email, subject: 'Successful application'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -24,6 +23,6 @@ class ConfirmationMailer < ApplicationMailer
     @job = params[:job]
     @employer = params[:employer];
     attachments['resume.pdf'] = File.read(@job_application.resume.current_path)
-    mail to: @job_application.email, subject: 'New application received'
+    mail from: "JobFinder", to: @job_application.email, subject: 'New application received'
   end
 end
