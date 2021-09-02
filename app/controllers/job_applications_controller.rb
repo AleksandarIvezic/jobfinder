@@ -1,4 +1,5 @@
 class JobApplicationsController < ApplicationController
+  before_action :set_select_collections, only: [:new, :create]
   def index 
     @job_applications = JobApplication.all
   end
@@ -11,7 +12,7 @@ class JobApplicationsController < ApplicationController
   def new
     @job = Job.find(params[:id])
     @job_application = @job.job_applications.build
-    @qual_options = ["VSS", "VKŠ", "SSS", "NK"]
+    
   end
 
   # GET /jobs/1/edit
@@ -63,6 +64,10 @@ class JobApplicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job_application = JobApplication.find(params[:id])
+    end
+
+    def set_select_collections
+      @qual_options = ["VSS", "VKŠ", "SSS", "NK"]
     end
 
     # Only allow a list of trusted parameters through.

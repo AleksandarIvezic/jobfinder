@@ -38,7 +38,8 @@
   </div>
 
   <div class="field">
-    <%= form.select(:professional_qualifications, options_for_select(@qual_options), :include_blank => true) %>
+    <%= form.label :professional_qualifications %>
+    <%= form.select(:professional_qualifications, options_for_select(@qual_options), include_blank: "Select Category" ) %>
   </div>
 
   <div class="field">
