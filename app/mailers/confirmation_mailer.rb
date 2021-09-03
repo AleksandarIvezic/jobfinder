@@ -23,6 +23,6 @@ class ConfirmationMailer < ApplicationMailer
     @job = params[:job]
     @employer = params[:employer];
     attachments['resume.pdf'] = File.read(@job_application.resume.current_path)
-    mail from: "JobFinder", to: @job_application.email, subject: 'New application received'
+    mail from: "JobFinder", to: @employer.email, subject: 'New application received'
   end
 end
