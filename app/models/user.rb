@@ -5,5 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :jobs, foreign_key: :creator_id
+
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: " is not correct. Please enter an e-mail adress" }
+  validates :password, presence: true, confirmation: true, length: {within: 6..40}
   
 end
