@@ -16,8 +16,10 @@
   <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn" %>
 
   
-
+  <% if @job.creator_id == current_user.id %>
   <%= link_to 'Edit', edit_job_path(@job) %> |
   <%= link_to 'Back', jobs_path %>
+  <%= link_to 'Delete' %>
+  <% end %>
 </main>
 
