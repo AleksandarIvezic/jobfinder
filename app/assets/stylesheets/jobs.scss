@@ -1,3 +1,29 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$dark-color: #000;
+$primary-color: #14213d;
+$secondary-color: #fca311;
+$ternary-color: #e5e5e5;
+$light-color: #fff;
+
+.center-container {
+  width: 1000px;
+  margin: 20px auto;
+}
+
+a {
+  color: $secondary-color;
+}
+
+.details-btn {
+  background: $ternary-color;
+  margin-top: 10px;
+  padding: 10px 40px;
+  border-radius: 5px;
+}
+
+.details-btn:hover {
+  background-color: darken($ternary-color, $amount: 10);
+  color: $dark-color;
+}

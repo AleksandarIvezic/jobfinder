@@ -11,7 +11,7 @@
   <p>Name:  <span><%= @creator.name%></span></p>
   <p>Email: <span><%= @creator.email%></span></p>
 </div>
-<h6><%= dateExpire%></h6>
+<h6><%= dateExpire(@job)%></h6>
 <br>
 <div class="apply-btn">
 <%= link_to 'APPLY', new_job_application_path(id: @job.id), class:"btn" %>
