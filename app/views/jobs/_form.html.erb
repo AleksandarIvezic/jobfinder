@@ -11,12 +11,12 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, 'Job title' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field secondary-background">
-    <%= form.label :description %>
+    <%= form.label :description, 'Job description' %>
     <%= form.rich_text_area :description , class: 'text-dark bg-light'%>
   </div>
 
