@@ -6,4 +6,9 @@ module JobsHelper
     @user = User.find(job.creator_id)
     @user.name    
   end
+  def display_logo(job)
+    @user = User.find(job.creator_id)
+    @user.logo ? @user.logo : 'gravatar.jpeg'
+  end
+
 end
