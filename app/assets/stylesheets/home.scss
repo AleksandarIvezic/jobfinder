@@ -1,3 +1,22 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$dark-color: #000;
+$primary-color: #14213d;
+$secondary-color: #fca311;
+$ternary-color: #e5e5e5;
+$light-color: #fff;
+
+main {
+  height: 85vh;
+}
+
+.job_search {
+  background: linear-gradient(rgba(20, 33, 61, 0.5), rgba(252, 163, 17, 0.5)),  image-url("background1.jpg");
+  background-size: cover;  
+}
+
+.employee_search {
+  background: linear-gradient(rgba(252, 163, 17, 0.5), rgba(20, 33, 61, 0.5)), image-url("background2.png");
+  background-size: cover;  
+}
