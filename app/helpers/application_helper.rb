@@ -1,8 +1,6 @@
 module ApplicationHelper
   def login_logout
-    content = ''
-    user_signed_in? ? content =  link_to("Logout", destroy_user_session_path, method: :delete, data: {confirm: 'Confirm Logout'}) : content << link_to("Login", new_user_session_path, class: "nav-link")
-    content.html_safe
+    user_signed_in? ? link_to("Logout", destroy_user_session_path, method: :delete, data: {confirm: 'Confirm Logout'}, class: "nav-link") : link_to("Login", new_user_session_path, class: "nav-link")
   end
   
   def signup
@@ -10,7 +8,7 @@ module ApplicationHelper
   end
 
   def my_offers
-    link_to('My offers', user_path, class: nav-link) if user_signed_in? 
+    link_to('My offers', jobs_path(filtered: true), class: 'nav-link') if user_signed_in? 
   end
 
   def display_notice

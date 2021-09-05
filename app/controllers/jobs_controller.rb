@@ -4,6 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs or /jobs.json
   def index
     @jobs = Job.all
+    @filtered = params[:filtered] if params[:filtered]
+    @filtered_jobs = Job.where("creator_id" == current_user.id) if current_user
   end
 
   # GET /jobs/1 or /jobs/1.json

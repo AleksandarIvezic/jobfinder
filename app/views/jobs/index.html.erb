@@ -2,25 +2,49 @@
 <h2 class= "text-light">Job offers</h2>
 
   <ul>
-    <% @jobs.each do |job| %>
-      <li>
-        <div class="offer-box d-flex">
-          <div class="left m-3 ">
-            <img width= '200px' height='200px' src="index.png" alt="logo">
-          </div> 
-          <div class="right m-3 text-light d-flex flex-column justify-content-between">
-            <div class="top">
-              <h4><%= job.name %></h4>
-              <hr>
+    <% if !@filtered %>
+      <% @jobs.each do |job| %>
+        <li>
+          <div class="offer-box d-flex">
+            <div class="left m-3 ">
+              <img width= '200px' height='200px' src="index.png" alt="logo">
+            </div> 
+            <div class="right m-3 text-light d-flex flex-column justify-content-between">
+              <div class="top">
+                <h4><%= job.name %></h4>
+                <hr>
+              </div>
+              <div class="bottom">
+                <p>Company: <%= job.creator_id %><p>
+                <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>  
+                <%= link_to 'Check details', job , class: 'details-btn'%>          
+              </div>
             </div>
-            <div class="bottom">
-              <p>Company: <%= job.creator_id %><p>
-              <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>  
-              <%= link_to 'Check details', job , class: 'details-btn'%>          
+          </div>            
+        </li>
+      <% end %>
+    <% else %>
+      <% @filtered_jobs.each do |job| %>
+        <li>
+          <div class="offer-box d-flex">
+            <div class="left m-3 ">
+              <img width= '200px' height='200px' src="index.png" alt="logo">
+            </div> 
+            <div class="right m-3 text-light d-flex flex-column justify-content-between">
+              <div class="top">
+                <h4><%= job.name %></h4>
+                <hr>
+              </div>
+              <div class="bottom">
+                <p>Company: <%= job.creator_id %><p>
+                <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>  
+                <%= link_to 'Check details', job , class: 'details-btn'%>          
+              </div>
             </div>
-          </div>
-        </div>            
-      </li>
+          </div>            
+        </li>
+      <% end %>
+
     <% end %>
   </ul>
 
