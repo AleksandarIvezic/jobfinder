@@ -27,6 +27,7 @@ body {
 }
 
 main {
+  color: $light-color;
   width: 100%;
 }
 
@@ -80,11 +81,11 @@ footer {
   opacity: 0.8;
  }
 
- .secondary-color{
-   color: $secondary-color;
- }
+.link {
+  color: $ternary-color;
+}
 
- .ternary-background {
-   background-color: $ternary-color;
- }
-
+.link:hover {
+  color: $secondary-color;
+  background-color: transparent;
+}
