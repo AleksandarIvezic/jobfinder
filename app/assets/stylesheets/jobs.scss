@@ -27,3 +27,14 @@ a {
   background-color: darken($ternary-color, $amount: 10);
   color: $dark-color;
 }
+
+.apply-btn {
+  padding: 10px 80px;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.apply-btn:hover {
+  background-color: darken($secondary-color, $amount: 10);
+  color: $dark-color;
+}
