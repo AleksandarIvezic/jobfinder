@@ -8,9 +8,8 @@ RSpec.describe "The expiring date", type: :feature do
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'password'    
     click_button 'Log in'
-    click_link 'Add New Job'
-    fill_in 'Name', with: 'Job name example'
-    fill_in 'Description', with: 'Job description test field'
+    click_link 'Create a job offer'
+    fill_in 'Job title', with: 'Job name example'
     fill_in 'Category', with: 'Job category'
     fill_in "Expiring date", with: "01/01/2022"
     click_button "Create Job"
@@ -21,9 +20,8 @@ RSpec.describe "The expiring date", type: :feature do
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'password'    
     click_button 'Log in'
-    click_link 'Add New Job'
-    fill_in 'Name', with: 'Job name example'
-    fill_in 'Description', with: 'Job description test field'
+    click_link 'Create a job offer'
+    fill_in 'Job title', with: 'Job name example'
     fill_in 'Category', with: 'Job category'
     fill_in "Expiring date", with: "01/01/2021"
     click_button "Create Job"
