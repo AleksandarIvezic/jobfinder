@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 $dark-color: #000;
 $primary-color: #14213d;
 $secondary-color: #fca311;
@@ -88,4 +87,8 @@ footer {
 .link:hover {
   color: $secondary-color;
   background-color: transparent;
+}
+
+.secondary-background {
+  background-color: darken($secondary-color, $amount: 10) ;
 }
