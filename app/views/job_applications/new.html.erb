@@ -1,9 +1,11 @@
 <main class= "d-flex flex-column align-items-center">
   <h2 class='position '>Position: <%=@job.name %></h2>
   <%= render 'form', job_application: @job_application %>
-  <%= link_to job_path(params[:id]), class: 'bg-transparent' do %>
-    <i class="fas fa-long-arrow-alt-left"> Back</i>     
+  <% if params[:id] %>
+    <%= link_to job_path(params[:id]), class: 'bg-transparent' do %>
+      <i class="fas fa-long-arrow-alt-left"> Back</i>     
+    <% end %>
   <% end %>
 </main>
-<h2> </h2>
+
 

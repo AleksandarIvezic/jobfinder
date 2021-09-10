@@ -4,7 +4,7 @@
         <%= @job.name%> (Category: <%= @job.category%>)
       </span>
     <% if user_signed_in? &&  @job.creator_id == current_user.id %>
-      <span class='d-flex'>
+      <span class='d-flex'>        
         <%= link_to edit_job_path(@job), class: 'bg-transparent me-2' do %>
           <i class="far fa-edit"></i>
         <% end %>
@@ -26,8 +26,12 @@
   </div>
   <h6><%= dateExpire(@job)%></h6>
   <br>
+  <% if user_signed_in? &&  @job.creator_id == current_user.id %>
+    <%= link_to 'APPLICATIONS', job_applications_path(id: @job.id), class:"apply-btn"%>
+  <% else %>
+    <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn"%>
+  <% end %>
   
-  <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn"   if !user_signed_in? || current_user.id != @job.creator_id%>
   <br><br>
 
   <% if user_signed_in? && current_user.id == @job.creator_id %>  

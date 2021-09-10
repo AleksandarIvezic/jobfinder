@@ -1,0 +1,31 @@
+<main class= "d-flex flex-column align-items-center">
+  <h2><%= @job.name %> applications:</h2>
+  <% if @job_applications.exists? %>           
+      <table class='table table-striped table-dark w-75 text-light'> 
+        <tr>
+          <th>Applicant name</th>
+          <th>E-mail</th>
+          <th>Phone number</th>
+          <th>Adress</th>
+          <th>Birth date</th>
+          <th>Qualifications</th>
+        </tr>
+        <% @job_applications.each do |application| %>   
+          <tr>
+            <td><%= application.name %></td>
+            <td><%= application.email %></td>
+            <td><%= application.phone %></td>
+            <td><%= application.address %></td>
+            <td><%= application.birth_date %></td>
+            <td><%= application.professional_qualifications %></td>
+          </tr>
+        <% end %>        
+      </table> 
+  <% else %>
+    <h4 class= "m-5 p-5 text-danger">You don't have applications yet!!!</h4>
+  <% end %> 
+  <%= link_to job_path(params[:id]), class: 'bg-transparent' do %>
+    <i class="fas fa-long-arrow-alt-left m-5"> Back</i>     
+  <% end %>
+</main>
+

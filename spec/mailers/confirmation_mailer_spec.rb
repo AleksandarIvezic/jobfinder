@@ -26,10 +26,6 @@ RSpec.describe ConfirmationMailer, :type => :mailer do
     expect(mailer.subject).to eq("Successful application")
     expect(mailer.from).to eq(["JobFinder@example.com"])
     expect(mailer.to).to eq([@job_application.email])
-    expect(mailer.attachments.length).to be(1)
-    expect(mailer.attachments[0]).to be_a_kind_of(Mail::Part)
-    expect(mailer.attachments[0].content_type).to be_start_with('application/pdf;')
-    expect(mailer.attachments[0].filename).to eq('resume.pdf')
   end
 
   it "applicant renders the body" do
@@ -40,7 +36,7 @@ RSpec.describe ConfirmationMailer, :type => :mailer do
   it "employer action renders the headers" do 
     mailer = ConfirmationMailer.with(job_application: @job_application, employer: @employer).employer
     expect(mailer.subject).to eq("New application received")
-    expect(mailer.from).to eq(["JobFinder"])
+    expect(mailer.from).to eq(["JobFinder@example.com"])
     expect(mailer.to).to eq([@employer.email])
     expect(mailer.attachments.length).to be(1)
     expect(mailer.attachments[0]).to be_a_kind_of(Mail::Part)
@@ -48,9 +44,9 @@ RSpec.describe ConfirmationMailer, :type => :mailer do
     expect(mailer.attachments[0].filename).to eq('resume.pdf')
   end
 
-  it "applicant renders the body" do
+  it "employer renders the body" do
     mailer = ConfirmationMailer.with(job_application: @job_application, employer: @employer).employer
-    expect(mailer.body.encoded).to match("Dear #{@employer.name},")
+    expect(mailer.body.encoded).to match("Dear \"#{@employer.name}\",")
   end  
   
 end

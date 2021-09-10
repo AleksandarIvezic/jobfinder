@@ -1,7 +1,8 @@
 class JobApplicationsController < ApplicationController
   before_action :set_select_collections, only: [:new, :create]
   def index 
-    @job_applications = JobApplication.all
+    @job = Job.find(params[:id]);
+    @job_applications = JobApplication.where('job_id = ?', @job.id)
   end
 
   def show
@@ -12,7 +13,7 @@ class JobApplicationsController < ApplicationController
   def new
     @job = Job.find(params[:id])
     @job_application = @job.job_applications.build
-    
+    @job_params = params
   end
 
   # GET /jobs/1/edit
