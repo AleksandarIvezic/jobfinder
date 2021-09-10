@@ -1,4 +1,7 @@
 <main class= "d-flex flex-column align-items-center">
   <h2>New Job</h2>
   <%= render 'form', job: @job %>
+  <%= link_to jobs_path(filtered: true), class: 'bg-transparent' do %>
+    <i class="fas fa-long-arrow-alt-left"> Back</i>     
+  <% end %>
 </main>

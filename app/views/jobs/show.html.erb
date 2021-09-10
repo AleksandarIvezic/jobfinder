@@ -30,9 +30,14 @@
   <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn"   if !user_signed_in? || current_user.id != @job.creator_id%>
   <br><br>
 
-    
-  <%= link_to jobs_path, class: 'bg-transparent' do %>
-    <i class="fas fa-long-arrow-alt-left"> Back</i>     
+  <% if user_signed_in? && current_user.id == @job.creator_id %>  
+    <%= link_to jobs_path(filtered: true), class: 'bg-transparent' do %>
+      <i class="fas fa-long-arrow-alt-left"> Back</i>     
+    <% end %>
+  <% else %>
+    <%= link_to jobs_path, class: 'bg-transparent' do %>
+      <i class="fas fa-long-arrow-alt-left"> Back</i>     
+    <% end %>
   <% end %>
 </main>
 
