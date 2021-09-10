@@ -1,13 +1,12 @@
 <main class='center-container'>
-<h2 class= "text-light ps-4">Job offers</h2>
-
+<h2 class= "ps-4 text-center">Job offers <hr></h2>
   <ul>
     <% if !@filtered %>
       <% @jobs.each do |job| %>
         <li>
           <div class="offer-box d-flex flex-column flex-sm-row align-items-center p-5">
             <div class="left m-3 d-none d-sm-block">
-              <img width= '200px' height='200px' src= <%= display_logo(job) %> alt="logo">
+              <%= image_tag  display_logo(job), alt:"Logo", style: 'width:200px; height:200px;'%>
             </div> 
             <div class="right m-3 text-light d-flex flex-column justify-content-between">
               <div class="top">
@@ -43,7 +42,7 @@
         <li>
           <div class="offer-box d-flex flex-column flex-sm-row align-items-center p-5">
             <div class="left m-3 d-none d-sm-block">
-              <img width= '200px' height='200px' src="index.png" alt="logo">
+              <%= image_tag  display_logo(job), alt:"Logo", style: 'width:200px; height:200px;'%>
             </div> 
             <div class="right m-3 text-light d-flex flex-column justify-content-between">
               <div class="top">

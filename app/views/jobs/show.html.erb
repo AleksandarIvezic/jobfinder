@@ -1,7 +1,7 @@
 <main class= 'main-show-job p-5 text-light'>
-  <h3 class='d-flex justify-content-between'>
+  <h2 class='d-flex justify-content-between'>
       <span >
-        <%= @job.name%> (Category: <%= @job.category%>)
+        <%= @job.name%> (Category: <%= @job.category%>)        
       </span>
     <% if user_signed_in? &&  @job.creator_id == current_user.id %>
       <span class='d-flex'>        
@@ -12,9 +12,11 @@
           <i class="far fa-times-circle"></i>
         <% end %>
       </span> 
-    <% end %>
-  </h3>
-  <hr>
+    <% end %>   
+  </h2>
+  <hr class='secondary-text'> 
+  
+  
 
   <h4>Job details:</h4>
   <p><%= @job.description%></p> 

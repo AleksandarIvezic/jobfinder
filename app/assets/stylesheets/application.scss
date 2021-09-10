@@ -20,7 +20,7 @@ $ternary-color: #e5e5e5;
 $light-color: #fff;
 
 body {
-  background-color: $primary-color;
+  background: linear-gradient(darken($primary-color, $amount:10),lighten($primary-color, $amount:10));
   margin: 0;
   padding: 0;
 }
@@ -28,6 +28,11 @@ body {
 main {
   color: $light-color;
   width: 100%;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
 }
 
 a {
@@ -38,19 +43,25 @@ a:hover {
   background-color: transparent;
 }
 
-nav {
-  a {
-    color: $primary-color;
+nav {  
+  .brand-logo:hover {
+    transform: scale3d(1.2, 1.1, 1);
+    transition: 0.3s ease-in-out;
   }
-  a:hover {
-    background-color: transparent;
+  .nav-item {
+    padding-left: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+  }
+  .nav-item:hover {
+    background:rgba(255, 255, 255, 0.1)
   }
 }
 
-h1 {
+h2,
+th {
   color: $secondary-color;
 }
-
 
 footer {
   background-color: $secondary-color;
@@ -104,6 +115,25 @@ li {
   background-color: darken($secondary-color, $amount: 10) ;
 }
 
+.secondary-text {
+  color: $secondary-color;
+}
+
 #error_explanation {
   color: $dark-color;
+}
+
+table {
+  box-shadow: 0 0 10px 1px rgba(130, 141, 27, 0.37);
+}
+
+
+@media (min-width: 575px) {
+  nav {
+    .nav-item {
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+    }    
+  }
 }

@@ -20,7 +20,9 @@
     
     <nav class="navbar navbar-expand-sm navbar-dark bg-none">      
       <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="#"><h1 class= "m-0" >JobFinder</h1></a>
+        <%= link_to :root, class: 'navbar-brand ms-4' do%>
+          <%= image_tag "logo.png", alt:"JobFinder", style: 'height:60px;', class: 'brand-logo'  %>
+        <% end %>
         <button class="my-navbar-toggler d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>

@@ -34,6 +34,8 @@ a {
 .details-btn:hover {
   background-color: darken($ternary-color, $amount: 10);
   color: $dark-color;
+  box-shadow: 0 0 10px 1px rgba(88, 115, 163, 0.77);
+  transition: 0.3s ease-in;
 }
 
 .apply-btn {
@@ -45,6 +47,8 @@ a {
 .apply-btn:hover {
   background-color: darken($secondary-color, $amount: 10);
   color: $dark-color;
+  box-shadow: 0 0 10px 1px rgba(130, 141, 27, 0.77);
+  transition: 0.3s ease-in;
 }
 
 // Style edit, delete, and back icons on show job page
@@ -79,6 +83,10 @@ a {
   color: darken($ternary-color, $amount: 20)
 }
 
+.job-form {
+  width: 75%;
+}
+
 @media (min-width: 786px) {
   .details-btn {
     background: $ternary-color;
@@ -90,5 +98,9 @@ a {
     padding: 10px 80px;
     background-color: $secondary-color;
     color: $primary-color;
+  }
+
+  .job-form {
+    width: 50%;
   }
 }
