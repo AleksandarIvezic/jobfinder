@@ -3,7 +3,7 @@ class ConfirmationMailerPreview < ActionMailer::Preview
   
   # Preview this email at http://localhost:3000/rails/mailers/confirmation_mailer/applicant
   def applicant
-    @job = Job.last
+    @job = Job.first
     
     @file = File.open("public/apple-touch-icon.png")
     @job_application = @job.job_applications.create(name: "test",birth_date:'12/12/1989', email:'mail@test.com', phone:'123456789', address:'Test adress', professional_qualifications: 'VSS', resume:@file, job_id:'1')
@@ -14,7 +14,7 @@ class ConfirmationMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/confirmation_mailer/employer
   def employer
-    @job = Job.last
+    @job = Job.first
     
     @file = File.open("public/apple-touch-icon.png")
     @job_application = @job.job_applications.create(name: "test",birth_date:'12/12/1989', email:'mail@test.com', phone:'123456789', address:'Test adress', professional_qualifications: 'VSS', resume:@file, job_id:'1')
