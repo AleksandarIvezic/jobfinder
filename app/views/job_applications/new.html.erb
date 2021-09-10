@@ -1,56 +1,6 @@
-<h2>Application for position: <%=@job.name %> </h2>
+<main class= "d-flex flex-column align-items-center">
+  <h2 class='position '>Position: <%=@job.name %></h2>
+  <%= render 'form', job_application: @job_application %>
+</main>
+<h2> </h2>
 
-<%= form_with(model: @job_application) do |form| %>
-  <% if @job_application.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job_application.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-        <% @job_application.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_field :birth_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :professional_qualifications %>
-    <%= form.select(:professional_qualifications, options_for_select(@qual_options), include_blank: "Select Category" ) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :resume %>
-    <%= form.file_field :resume %>
-  </div>
-  <div class="field">
-  <%= form.hidden_field :job_id, value: @job.id %>  
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Apply for job"%>
-  </div>
-<% end %>
