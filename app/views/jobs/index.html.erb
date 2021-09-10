@@ -18,7 +18,7 @@
               <div class="bottom">
                 <p>Company: <%= display_employer(job) %><p>
                 <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>  
-                <div class="links d-flex justify-content-between flex-grow-1">
+                <div class="links d-flex justify-content-between ">
                   <%= link_to 'Check details', job , class: 'details-btn'%>          
                 <% if user_signed_in? && current_user.id == job.creator_id %>
                   <span class='d-flex'>

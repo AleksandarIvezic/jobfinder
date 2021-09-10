@@ -27,7 +27,7 @@ a {
 
 .details-btn {
   background: $ternary-color;
-  padding: 10px 40px;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
@@ -37,7 +37,7 @@ a {
 }
 
 .apply-btn {
-  padding: 10px 80px;
+  padding: 5px 10px;
   background-color: $secondary-color;
   color: $primary-color;
 }
@@ -77,4 +77,18 @@ a {
 .fa-long-arrow-alt-left:hover {
   cursor: pointer;
   color: darken($ternary-color, $amount: 20)
+}
+
+@media (min-width: 786px) {
+  .details-btn {
+    background: $ternary-color;
+    padding: 10px 40px;
+    border-radius: 5px;
+  }
+
+  .apply-btn {
+    padding: 10px 80px;
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
 }
