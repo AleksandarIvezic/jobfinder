@@ -99,3 +99,7 @@ li {
 .secondary-background {
   background-color: darken($secondary-color, $amount: 10) ;
 }
+
+#error_explanation {
+  color: $dark-color;
+}
