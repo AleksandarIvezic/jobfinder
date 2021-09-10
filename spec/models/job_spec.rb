@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Job, type: :model do
   describe 'associations' do
-    it { should have_many(:job_applications) }
+    it { should have_many(:job_applications).dependent(:destroy) }
   end
 
   describe 'validations' do
