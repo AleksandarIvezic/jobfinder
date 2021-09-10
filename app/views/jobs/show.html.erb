@@ -1,5 +1,19 @@
-<main class= 'p-5 text-light'>
-  <h3><%= @job.name%> <span>(Category: <%= @job.category%>)</span></h3>
+<main class= 'main-show-job p-5 text-light'>
+  <h3 class='d-flex justify-content-between'>
+    <% if user_signed_in? &&  @job.creator_id == current_user.id %>
+      <span >
+        <%= @job.name%> (Category: <%= @job.category%>)
+      </span>
+      <span class='d-flex'>
+        <%= link_to edit_job_path(@job), class: 'bg-transparent me-2' do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to  job_path, method: :delete, data:{confirm: 'Are you sure you want to delete the job offer?'}, class: 'bg-transparent' do %>
+          <i class="far fa-times-circle"></i>
+        <% end %>
+      </span> 
+    <% end %>
+  </h3>
   <hr>
 
   <h4>Job details:</h4>
@@ -13,13 +27,12 @@
   <h6><%= dateExpire(@job)%></h6>
   <br>
   
-  <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn" %>
+  <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn"   if !user_signed_in? || current_user.id != @job.creator_id%>
+  <br><br>
 
-  
-  <% if @job.creator_id == current_user.id %>
-  <%= link_to 'Edit', edit_job_path(@job) %> |
-  <%= link_to 'Back', jobs_path %>
-  <%= link_to 'Delete' %>
+    
+  <%= link_to jobs_path, class: 'bg-transparent' do %>
+    <i class="fas fa-long-arrow-alt-left"> Back</i>     
   <% end %>
 </main>
 

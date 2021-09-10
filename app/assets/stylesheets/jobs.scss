@@ -7,6 +7,11 @@ $secondary-color: #fca311;
 $ternary-color: #e5e5e5;
 $light-color: #fff;
 
+.main-show-job {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .center-container {
   max-width: 1000px;
   margin: 20px auto;
@@ -37,4 +42,36 @@ a {
 .apply-btn:hover {
   background-color: darken($secondary-color, $amount: 10);
   color: $dark-color;
+}
+
+// Style edit, delete, and back icons on show job page
+.fa-edit {
+  color: $secondary-color;
+}
+.fa-edit:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  color: lighten($secondary-color, $amount: 10)
+}
+
+.fa-times-circle {
+  color: #8f2222;
+}
+.fa-times-circle:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  color: lighten($color: #8f2222, $amount: 10)
+}
+
+
+.fa-long-arrow-alt-left {
+  color: $ternary-color;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.fa-long-arrow-alt-left:hover {
+  cursor: pointer;
+  color: darken($ternary-color, $amount: 20)
 }
