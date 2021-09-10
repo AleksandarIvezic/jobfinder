@@ -1,9 +1,9 @@
 <main class= 'main-show-job p-5 text-light'>
   <h3 class='d-flex justify-content-between'>
-    <% if user_signed_in? &&  @job.creator_id == current_user.id %>
       <span >
         <%= @job.name%> (Category: <%= @job.category%>)
       </span>
+    <% if user_signed_in? &&  @job.creator_id == current_user.id %>
       <span class='d-flex'>
         <%= link_to edit_job_path(@job), class: 'bg-transparent me-2' do %>
           <i class="far fa-edit"></i>

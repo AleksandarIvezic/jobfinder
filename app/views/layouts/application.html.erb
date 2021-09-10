@@ -18,9 +18,7 @@
   <body>
     
     
-    <nav class="navbar navbar-expand-sm navbar-dark bg-none">
-      <%= display_notice %>
-      <%= display_alert %>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-none">      
       <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="#"><h1 class= "m-0" >JobFinder</h1></a>
         <button class="my-navbar-toggler d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +46,8 @@
         </div>
       </div>
     </nav> 
+    <%= display_notice %>
+    <%= display_alert %>
     <%= yield %>
   </body>
   <footer>
