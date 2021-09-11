@@ -1,8 +1,12 @@
 class JobApplicationsController < ApplicationController
   before_action :set_select_collections, only: [:new, :create]
   def index 
+    if params[:id]
     @job = Job.find(params[:id]);
-    @job_applications = JobApplication.where('job_id = ?', @job.id)
+    @job_applications = JobApplication.where('job_id = ?', @job.id) 
+    else
+      redirect_to :jobs
+    end   
   end
 
   def show
@@ -33,7 +37,7 @@ class JobApplicationsController < ApplicationController
         format.html { redirect_to :root, notice: "Job application was successfully created." }
         format.json { render :root, status: :created, location: @job_application }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render action: :new, status: :unprocessable_entity }
         format.json { render json: @job_application.errors, status: :unprocessable_entity }
       end
     end

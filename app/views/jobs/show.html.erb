@@ -34,7 +34,7 @@
     <%= link_to 'APPLY NOW', new_job_application_path(id: @job.id), class:"apply-btn"%>
   <% end %>
   
-  <br><br>
+  <br><br><br>
 
   <% if user_signed_in? && current_user.id == @job.creator_id %>  
     <%= link_to jobs_path(filtered: true), class: 'bg-transparent' do %>
