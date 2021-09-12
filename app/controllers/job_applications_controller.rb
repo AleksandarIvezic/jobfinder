@@ -11,6 +11,8 @@ class JobApplicationsController < ApplicationController
 
   def show
     @job_application = JobApplication.find(params[:id])
+    @pdf_filename = File.join(Rails.public_path, @job_application.resume.to_s)
+    send_file(@pdf_filename, :filename => "Resume.pdf", :disposition => 'inline', :type => "application/pdf")
   end
 
   # GET /jobs/new

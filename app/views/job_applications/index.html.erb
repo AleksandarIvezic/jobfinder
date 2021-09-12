@@ -1,3 +1,4 @@
+<% require 'open-uri' %>
 <main class= "d-flex flex-column align-items-center">
   <h2><%= @job.name %> applications:</h2>
   <hr class='secondary-text w-75'>
@@ -10,6 +11,7 @@
           <th>Adress</th>
           <th>Birth date</th>
           <th>Qualifications</th>
+          <th>Resume</th>
         </tr>
         <% @job_applications.each do |application| %>   
           <tr>
@@ -19,6 +21,7 @@
             <td><%= application.address %></td>
             <td><%= application.birth_date.strftime("%d/%m/%Y") %></td>
             <td><%= application.professional_qualifications %></td>
+            <td><%= link_to 'Resume', application, target: '_blank', class: 'btn btn-warning py-0' %> </td>
           </tr>
         <% end %>        
       </table> 
