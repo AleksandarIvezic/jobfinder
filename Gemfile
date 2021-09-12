@@ -34,6 +34,9 @@ gem 'devise'
 #Add carrierwave
 gem 'carrierwave', '~> 2.0'
 
+# Add bullet gem
+gem 'bullet', group: 'development'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
