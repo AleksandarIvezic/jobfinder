@@ -1,18 +1,21 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Ruby_on_rails-red)
 
-# Project Name
+# Job Finder
 
-> One paragraph statement about the project.
+> This is a job search and a job posting application, through which anyone can apply for a posted job offer, and only logged-in users can create and post new job offers. Once the user applies for the position the Post owner will get an email with user data and the applicant will get the confirmation email.
 
-![screenshot](./app_screenshot.png)
+![screenshot](public/Screenshots/Screenshot-joblist.png)
+![screenshot](public/Screenshots/Screenshot-job.png)
+![screenshot](public/Screenshots/Screenshot-newjob.png)
 
 Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby v2.7.2
+- Ruby on Rails v6.1.4
+- Bootstrap 5
+- Sass
 
 ## Live Demo
 
@@ -21,55 +24,71 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Ruby v2.7.2
+- Ruby on Rails v6.1.4
+
 ### Setup
+
+Clone the repository with:
+
+```
+git@github.com:ShinobiWarior/jobfinder.git
+```
+or download [ZIP file](https://github.com/ShinobiWarior/jobfinder/archive/refs/heads/develop.zip)
 
 ### Install
 
+ From the app directory run command: 
+```
+git checkout development
+git pull
+```
+
+ Run the following commands to create and migrate databases:
+```
+rails db:create
+rails db:migrate
+```
+You can use created seeds if you run:
+```
+rails db:seed
+```
+
 ### Usage
 
+Now you can open the app on your browser with adress:
+```
+http://localhost:3000/
+```
+
 ### Run tests
+If you want to test app, run command:
+```
+rspec
+```
+## Author
 
-### Deployment
+👤 **ALeksandar Ivezic**
+
+- GitHub: [Aleksandar Ivezic](https://github.com/ShinobiWarior)
+- Twitter: [@Aivezic](https://twitter.com/Aivezic)
+- LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
 
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/ShinobiWarior/jobfinder/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
