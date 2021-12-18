@@ -2,11 +2,12 @@
 
 # Job Finder
 
-> This is a job search and a job posting application, through which anyone can apply for a posted job offer, and only logged-in users can create and post new job offers. Once the user applies for the position the Post owner will get an email with user data and the applicant will get the confirmation email.
+> This is a job search and a job posting application, through which anyone can apply for a posted job offer, and only logged-in users can create and post new job offers. Once the user applies for the position the Post owner will get an email with user data and the applicant will get the confirmation email. The post owners can see the list of all applicants and download their resumes.
 
 ![screenshot](public/Screenshots/Screenshot-joblist.png)
 ![screenshot](public/Screenshots/Screenshot-job.png)
 ![screenshot](public/Screenshots/Screenshot-newjob.png)
+![screenshot](public/Screenshots/Screenshot-applications.png)
 
 Additional description about the project and its features.
 
