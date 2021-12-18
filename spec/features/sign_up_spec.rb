@@ -1,4 +1,3 @@
-
 RSpec.describe 'Sign up process', type: :feature do
   it 'new user sign up successfully' do
     visit '/users/sign_up'

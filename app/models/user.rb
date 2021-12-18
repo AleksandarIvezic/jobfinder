@@ -6,8 +6,11 @@ class User < ApplicationRecord
 
   has_many :jobs, foreign_key: :creator_id
 
-  validates :name, presence: true, length: { maximum: 20}
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: " is not correct. Please enter an e-mail adress" }
-  validates :password, presence: true, confirmation: true, length: {within: 6..40}
-  
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :email, presence: true, uniqueness: true,
+                    format: {
+                      with: URI::MailTo::EMAIL_REGEXP,
+                      message: ' is not correct. Please enter an e-mail adress'
+                    }
+  validates :password, presence: true, confirmation: true, length: { within: 6..40 }
 end

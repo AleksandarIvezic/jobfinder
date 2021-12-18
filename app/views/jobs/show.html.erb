@@ -26,7 +26,7 @@
     <p>Name:  <span><%= @creator.name%></span></p>
     <p>Email: <span><%= @creator.email%></span></p>
   </div>
-  <h6><%= dateExpire(@job)%></h6>
+  <h6><%= date_expire(@job)%></h6>
   <br>
   <% if user_signed_in? &&  @job.creator_id == current_user.id %>
     <%= link_to 'APPLICATIONS', job_applications_path(id: @job.id), class:"apply-btn"%>
