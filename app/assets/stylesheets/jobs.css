@@ -1,12 +1,3 @@
-// Place all the styles related to the jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-$dark-color: #000;
-$primary-color: #14213d;
-$secondary-color: #fca311;
-$ternary-color: #e5e5e5;
-$light-color: #fff;
-
 .main-show-job {
   max-width: 1200px;
   margin: 0 auto;
@@ -22,45 +13,44 @@ $light-color: #fff;
 }
 
 a {
-  color: $secondary-color;
+  color: #fca311;
 }
 
 .details-btn {
-  background: $ternary-color;
+  background: #e5e5e5;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
 .details-btn:hover {
-  background-color: darken($ternary-color, $amount: 10);
-  color: $dark-color;
+  background-color: #ccc;
+  color: #000;
   box-shadow: 0 0 10px 1px rgba(88, 115, 163, 0.77);
   transition: 0.3s ease-in;
 }
 
 .apply-btn {
   padding: 5px 10px;
-  background-color: $secondary-color;
-  color: $primary-color;
+  background-color: #fca311;
+  color: #14213d;
 }
 
 .apply-btn:hover {
-  background-color: darken($secondary-color, $amount: 10);
-  color: $dark-color;
+  background-color: #d78703;
+  color: #000;
   box-shadow: 0 0 10px 1px rgba(130, 141, 27, 0.77);
   transition: 0.3s ease-in;
 }
 
-// Style edit, delete, and back icons on show job page
 .fa-edit {
-  color: $secondary-color;
+  color: #fca311;
 }
 
 .fa-edit:hover {
   transform: scale(1.1);
   transition: 0.5s ease-out;
   cursor: pointer;
-  color: lighten($secondary-color, $amount: 10);
+  color: #fdb643;
 }
 
 .fa-times-circle {
@@ -71,18 +61,18 @@ a {
   transform: scale(1.1);
   transition: 0.5s ease-out;
   cursor: pointer;
-  color: lighten($color: #8f2222, $amount: 10);
+  color: #b82c2c;
 }
 
 .fa-long-arrow-alt-left {
-  color: $ternary-color;
+  color: #e5e5e5;
   font-size: 1.2rem;
   font-style: normal;
 }
 
 .fa-long-arrow-alt-left:hover {
   cursor: pointer;
-  color: darken($ternary-color, $amount: 20);
+  color: #b2b2b2;
 }
 
 .trix-editor {
@@ -91,14 +81,14 @@ a {
 
 @media (min-width: 786px) {
   .details-btn {
-    background: $ternary-color;
+    background: #e5e5e5;
     padding: 10px 40px;
     border-radius: 5px;
   }
 
   .apply-btn {
     padding: 10px 80px;
-    background-color: $secondary-color;
-    color: $primary-color;
+    background-color: #fca311;
+    color: #14213d;
   }
 }

@@ -13,20 +13,14 @@
  *= require_tree .
  *= require_self
  */
-$dark-color: #000;
-$primary-color: #14213d;
-$secondary-color: #fca311;
-$ternary-color: #e5e5e5;
-$light-color: #fff;
-
 body {
-  background: linear-gradient(darken($primary-color, $amount:10), lighten($primary-color, $amount:10));
+  background: linear-gradient(#070c17, #213663);
   margin: 0;
   padding: 0;
 }
 
 main {
-  color: $light-color;
+  color: #fff;
   width: 100%;
 }
 
@@ -43,42 +37,40 @@ a:hover {
   background-color: transparent;
 }
 
-nav {
-  .brand-logo:hover {
-    transform: scale3d(1.2, 1.1, 1);
-    transition: 0.3s ease-in-out;
-  }
+nav .brand-logo:hover {
+  transform: scale3d(1.2, 1.1, 1);
+  transition: 0.3s ease-in-out;
+}
 
-  .nav-item {
-    padding-left: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
-  }
+nav .nav-item {
+  padding-left: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+}
 
-  .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
+nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 h2,
 th {
-  color: $secondary-color;
+  color: #fca311;
 }
 
 footer {
-  background-color: $secondary-color;
+  background-color: #fca311;
   display: flex;
   justify-content: center;
   padding: 20px;
+}
 
-  p {
-    margin: 0;
-    font-size: 1.2rem;
-  }
+footer p {
+  margin: 0;
+  font-size: 1.2rem;
+}
 
-  a:hover {
-    color: $ternary-color;
-  }
+footer a:hover {
+  color: #e5e5e5;
 }
 
 ul {
@@ -90,7 +82,7 @@ li {
 }
 
 .fa-bars {
-  color: $secondary-color;
+  color: #fca311;
 }
 
 .navbar-toggler {
@@ -108,24 +100,24 @@ li {
 }
 
 .link {
-  color: $ternary-color;
+  color: #e5e5e5;
 }
 
 .link:hover {
-  color: $secondary-color;
+  color: #fca311;
   background-color: transparent;
 }
 
 .secondary-background {
-  background-color: darken($secondary-color, $amount: 10);
+  background-color: #d78703;
 }
 
 .secondary-text {
-  color: $secondary-color;
+  color: #fca311;
 }
 
 #error_explanation {
-  color: $dark-color;
+  color: #000;
   width: 100%;
 }
 
@@ -134,11 +126,9 @@ table {
 }
 
 @media (min-width: 575px) {
-  nav {
-    .nav-item {
-      padding: 0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
-    }
+  nav .nav-item {
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
   }
 }
