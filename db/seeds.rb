@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Job.destroy_all
-@user = User.create(name: "Ingemark", email: "ingemark@example.com", logo: "index.png", password: "password" , password_confirmation: "password")
+@user = User.create(name: "Company-X", email: "x-mail@example.com", logo: "index.png", password: "password" , password_confirmation: "password")
 @user.jobs.create!([{
   name: 'Full-Stack developer',
   description: File.read('public/description-test.html'),
