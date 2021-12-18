@@ -16,7 +16,7 @@ RSpec.describe ConfirmationMailer, :type => :mailer do
       expiring_date: "14-12-2021"
     )
   
-    @file = File.open("public/apple-touch-icon.png")
+    @file = File.open("public/Resume-test.pdf")
     @job_application = @job.job_applications.create(name: "test",birth_date:'12/12/1989', email:'mail@test.com', phone:'123456789', address:'Test adress', professional_qualifications: 'VSS', resume:@file, job_id:'1')
    
   end
