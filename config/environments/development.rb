@@ -86,14 +86,14 @@ Rails.application.configure do
   # Add mailer delivery method
   config.action_mailer.delivery_method = :smtp
   # Add gmail configuration
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'a.ivezic88@gmail.com',
-    password:             'bdxbkcmzxrqsiafr',
-    authentication:       'plain',
-    enable_starttls_auto: true }
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'example.com',
+  #   user_name:            'your email comes here',
+  #   password:             'key comes here',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true }
 
 
   # Uncomment if you wish to allow Action Cable access from any origin.
