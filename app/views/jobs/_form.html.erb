@@ -1,0 +1,36 @@
+<%= form_with(model: job, html: {class:'mx-auto job-form w-75'}) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :name, 'Job title' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field secondary-background text-editor" id="text-editor">
+    <%= form.label :description, 'Job description' %>
+    <%= form.rich_text_area :description , class: 'trix-editor text-dark bg-light'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiring_date %>
+    <%= form.date_field :expiring_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-success' %>
+  </div>
+<% end %>

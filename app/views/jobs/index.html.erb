@@ -1,0 +1,81 @@
+<main class='center-container'>
+<h2 class= "px-4 text-center">Job offers <hr></h2>
+  <ul>
+    <% if !@filtered %>
+      <% @jobs.each do |job| %>
+        <li>
+          <div class="offer-box d-flex flex-column flex-sm-row align-items-center p-5">
+            <div class="left m-3 d-none d-sm-block">
+              <%= image_tag  display_logo(job), alt:"Logo", style: 'width:200px; height:200px;'%>
+            </div> 
+            <div class="right m-3 text-light d-flex flex-column justify-content-between">
+              <div class="top">
+                <h4><%= job.name %></h4>
+                <hr>
+                <p>Category: <%= job.category %></p>
+              </div>
+              <div class="bottom">
+                <p>Company: <%= display_employer(job) %><p>
+                <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>  
+                <div class="links d-flex justify-content-between ">
+                  <%= link_to 'Check details', job , class: 'details-btn'%>          
+                <% if user_signed_in? && current_user.id == job.creator_id %>
+                  <span class='d-flex'>
+                    <%= link_to edit_job_path(job), class: 'bg-transparent me-2' do %>
+                      <i class="far fa-edit fs-3"></i>
+                    <% end %>
+                    <%= link_to  job_path(job), method: :delete, data:{confirm: 'Are you sure you want to delete the job offer?'}, class: 'bg-transparent' do %>
+                      <i class="far fa-times-circle fs-3"></i>
+                    <% end %>
+                  </span> 
+                <% else %>
+                  <%= link_to 'APPLY NOW', new_job_application_path(id: job.id), class:"apply-btn"%>
+                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>            
+        </li>
+      <% end %>
+    <% else %>
+      <% @filtered_jobs.each do |job| %>
+        <li>
+          <div class="offer-box d-flex flex-column flex-sm-row align-items-center p-5">
+            <div class="left m-3 d-none d-sm-block">
+              <%= image_tag  display_logo(job), alt:"Logo", style: 'width:200px; height:200px;'%>
+            </div> 
+            <div class="right m-3 text-light d-flex flex-column justify-content-between">
+              <div class="top">
+                <h4><%= job.name %></h4>
+                <hr>
+                <p>Category: <%= job.category %></p>
+              </div>
+              <div class="bottom">
+                <p>Company: <%= display_employer(job) %><p>
+                <p>Expiring on: <%= job.expiring_date.strftime("%d/%m/%Y")%><p>
+                <div class="links d-flex justify-content-between flex-grow-1">
+                  <%= link_to 'Check details', job , class: 'details-btn'%>          
+                  <span class='d-flex'>
+                    <%= link_to edit_job_path(job), class: 'bg-transparent me-2' do %>
+                      <i class="far fa-edit fs-3"></i>
+                    <% end %>
+                    <%= link_to  job_path(job), method: :delete, data:{confirm: 'Are you sure you want to delete the job offer?'}, class: 'bg-transparent' do %>
+                      <i class="far fa-times-circle fs-3"></i>
+                    <% end %>
+                  </span> 
+                </div>  
+              </div>
+            </div>
+          </div>            
+        </li>
+      <% end %>
+
+      <%= link_to 'Create new offer', new_job_path, class: "btn btn-success btn-block w-100 text-light" %>
+    <% end %>
+  </ul>
+
+  
+</main>
+
+
+

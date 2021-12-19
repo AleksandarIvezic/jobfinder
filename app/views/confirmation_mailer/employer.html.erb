@@ -1,0 +1,14 @@
+<h1>Dear "<%= @employer.name %>",</h1>
+
+<p>You just recieved new applicaiton</p>
+<p> Candidate details: </p>
+<p>Name: <%= @job_application.name %></p>
+<p>Email: <%= @job_application.email %></p>
+<p>Birth date: <%= @job_application.birth_date.strftime("%d-%m-%Y") %></p>
+<p>Qualifications: <%= @job_application.professional_qualifications %></p>
+<p>Address: <%= @job_application.address %></p>
+<p>Phone: <%= @job_application.phone %></p>
+
+
+<p>Best regards,</p>
+<p>JobFinder team</p>

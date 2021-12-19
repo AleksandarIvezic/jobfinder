@@ -1,0 +1,15 @@
+## Dear "<%= @employer.name %>",
+
+You just recieved new applicaiton
+
+Candidate details: 
+Name: <%= @job_application.name %>
+Email: <%= @job_application.email %>
+Birth date: <%= @job_application.birth_date.strftime("%d-%m-%Y") %>
+Qualifications: <%= @job_application.professional_qualifications %>
+Address: <%= @job_application.address %>
+Phone: <%= @job_application.phone %>
+
+
+Best regards,
+JobFinder team

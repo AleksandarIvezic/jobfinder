@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+$dark-color: #000;
+$primary-color: #14213d;
+$secondary-color: #fca311;
+$ternary-color: #e5e5e5;
+$light-color: #fff;
+
+body {
+  background: linear-gradient(darken($primary-color, $amount:10), lighten($primary-color, $amount:10));
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  color: $light-color;
+  width: 100%;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: transparent;
+}
+
+nav {
+  .brand-logo:hover {
+    transform: scale3d(1.2, 1.1, 1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-item {
+    padding-left: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+  }
+
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+h2,
+th {
+  color: $secondary-color;
+}
+
+footer {
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  a:hover {
+    color: $ternary-color;
+  }
+}
+
+ul {
+  padding: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.fa-bars {
+  color: $secondary-color;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.my-navbar-toggler {
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: none;
+}
+
+.my-navbar-toggler:hover {
+  opacity: 0.8;
+}
+
+.link {
+  color: $ternary-color;
+}
+
+.link:hover {
+  color: $secondary-color;
+  background-color: transparent;
+}
+
+.secondary-background {
+  background-color: darken($secondary-color, $amount: 10);
+}
+
+.secondary-text {
+  color: $secondary-color;
+}
+
+#error_explanation {
+  color: $dark-color;
+  width: 100%;
+}
+
+table {
+  box-shadow: 0 0 10px 1px rgba(130, 141, 27, 0.37);
+}
+
+@media (min-width: 575px) {
+  nav {
+    .nav-item {
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 1px rgba(159, 194, 166, 0.705);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+// Place all the styles related to the jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$dark-color: #000;
+$primary-color: #14213d;
+$secondary-color: #fca311;
+$ternary-color: #e5e5e5;
+$light-color: #fff;
+
+.main-show-job {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.center-container {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.right {
+  width: 100%;
+}
+
+a {
+  color: $secondary-color;
+}
+
+.details-btn {
+  background: $ternary-color;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.details-btn:hover {
+  background-color: darken($ternary-color, $amount: 10);
+  color: $dark-color;
+  box-shadow: 0 0 10px 1px rgba(88, 115, 163, 0.77);
+  transition: 0.3s ease-in;
+}
+
+.apply-btn {
+  padding: 5px 10px;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.apply-btn:hover {
+  background-color: darken($secondary-color, $amount: 10);
+  color: $dark-color;
+  box-shadow: 0 0 10px 1px rgba(130, 141, 27, 0.77);
+  transition: 0.3s ease-in;
+}
+
+// Style edit, delete, and back icons on show job page
+.fa-edit {
+  color: $secondary-color;
+}
+
+.fa-edit:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  color: lighten($secondary-color, $amount: 10);
+}
+
+.fa-times-circle {
+  color: #8f2222;
+}
+
+.fa-times-circle:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  color: lighten($color: #8f2222, $amount: 10);
+}
+
+.fa-long-arrow-alt-left {
+  color: $ternary-color;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+
+.fa-long-arrow-alt-left:hover {
+  cursor: pointer;
+  color: darken($ternary-color, $amount: 20);
+}
+
+.trix-editor {
+  min-height: 300px;
+}
+
+@media (min-width: 786px) {
+  .details-btn {
+    background: $ternary-color;
+    padding: 10px 40px;
+    border-radius: 5px;
+  }
+
+  .apply-btn {
+    padding: 10px 80px;
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
